@@ -8,12 +8,8 @@ pipeline {
       }
     }
     stage('Pre-Build') {
-      steps {
-        gradle
-      }
-      steps {
-        sh -c "cd ./src/frontend/ && npm install"
-      }
+      gradle
+      cd ./src/frontend/ && npm install
     }
     stage('Build') {
       steps {
