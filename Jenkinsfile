@@ -12,12 +12,12 @@ pipeline {
         gradle
       }
       steps {
-        cd ../src/frontend/ && npm install
+        sh -c "cd ./src/frontend/ && npm install"
       }
     }
     stage('Build') {
       steps {
-        echo $PWD && echo 'Building..'
+        sh -c "echo $PWD && echo 'Building..'"
       }
     }
     stage('Test') {
