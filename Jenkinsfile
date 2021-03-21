@@ -10,14 +10,14 @@ pipeline {
     stage('Pre-Build') {
       steps {
         gradle
-        cd ../src/frontend/
-        npm install
+      }
+      steps {
+        cd ../src/frontend/ && npm install
       }
     }
     stage('Build') {
       steps {
-        echo $PWD
-        echo 'Building..'
+        echo $PWD && echo 'Building..'
       }
     }
     stage('Test') {
