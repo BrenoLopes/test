@@ -8,7 +8,7 @@ pipeline {
       }
     }
     stage('Pre-Build') {
-      steps {
+      steps('test') {
         sh 'cd ./src/frontend/'
         sh 'npm install'
       }
