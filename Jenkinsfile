@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Pre-Build') {
       steps {
-        echo $PWD
+        sh 'echo $PWD'
       }
     }
     stage('Build') {
