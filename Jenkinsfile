@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Git checkout'){
       steps{
-        git checkout master
+        sh 'git checkout master'
       }
     }
     stage('Pre-Build') {
