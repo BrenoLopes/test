@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh -c "echo $PWD && echo 'Building..'"
+        echo 'Building'
       }
     }
     stage('Test') {
