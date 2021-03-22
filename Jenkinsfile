@@ -17,13 +17,14 @@ pipeline {
       steps('Test the frontend') {
         sh 'cd ./src/frontend/'
         sh 'npm run test'
-      }
-      steps('Test the backend') {
-        sh 'echo $pwd'
+        sh 'cd ../../'
+        sh 'gradle test'
       }
     }
     stage('Build') {
-    
+      steps {
+        echo 'Building'
+      }
     }
     stage('Deploy') {
       steps {
