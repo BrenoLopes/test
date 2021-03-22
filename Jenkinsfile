@@ -4,12 +4,14 @@ pipeline {
   stages {
     stage('Git checkout'){
       steps{
+        echo 'Checking out'
         git checkout master
       }
     }
     stage('Pre-Build') {
-      gradle
-      cd ./src/frontend/ && npm install
+      steps {
+        echo $PWD
+      }
     }
     stage('Build') {
       steps {
