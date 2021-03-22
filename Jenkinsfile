@@ -9,7 +9,8 @@ pipeline {
     }
     stage('Pre-Build') {
       steps {
-        sh 'echo $PWD'
+        sh 'cd ./src/frontend/'
+        sh 'npm install'
       }
     }
     stage('Build') {
