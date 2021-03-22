@@ -4,7 +4,6 @@ pipeline {
   stages {
     stage('Git checkout'){
       steps{
-        echo 'Checking out'
         git checkout master
       }
     }
