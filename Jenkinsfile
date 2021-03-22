@@ -19,7 +19,7 @@ pipeline {
         sh 'npm run test'
       }
       steps('Test the backend') {
-        sh -c 'echo $pwd'
+        sh 'echo $pwd'
       }
     }
     stage('Build') {
