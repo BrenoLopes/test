@@ -7,21 +7,23 @@ pipeline {
         sh 'git checkout master'
       }
     }
-    stage('Pre-Build') {
-      steps('test') {
+    stage('Download Dependencies') {
+      steps('Setting javascript dependencies') {
         sh 'cd ./src/frontend/'
         sh 'npm install'
       }
     }
-    stage('Build') {
-      steps {
-        echo 'Building'
+    stage('Test') {
+      steps('Test the frontend') {
+        sh 'cd ./src/frontend/'
+        sh 'npm run test'
+      }
+      steps('Test the backend') {
+        sh -c echo $pwd
       }
     }
-    stage('Test') {
-      steps {
-        echo 'Testing..'
-      }
+    stage('Build') {
+    
     }
     stage('Deploy') {
       steps {
