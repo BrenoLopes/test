@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Test') {
       steps('Test the frontend') {
-        sh 'cd ./src/frontend/ && npm install && npm run test'
+        sh 'cd ./src/frontend/ && npm install && npm run test-prod'
         sh 'gradle test'
       }
     }
