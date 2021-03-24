@@ -7,9 +7,13 @@ pipeline {
         sh 'git checkout master'
       }
     }
-    stage('Test') {
+    stage('Test Frontend') {
       steps('Test the frontend') {
         sh 'cd ./src/frontend/ && npm install && npm run test-prod'
+      }
+    }
+    stage('Test Backend') {
+      steps('Test the backend') {
         sh 'gradle test'
       }
     }
