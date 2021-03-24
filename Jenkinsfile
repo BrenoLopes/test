@@ -15,6 +15,7 @@ pipeline {
     }
     stage('Test') {
       steps('Test the frontend') {
+        sh 'echo $pwd'
         sh 'cd ./src/frontend/ && npm run test'
         sh 'gradle test'
       }
