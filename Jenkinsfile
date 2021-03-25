@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Test Frontend') {
       steps('Test the frontend') {
-        sh 'cd ./src/frontend/ && npm install && npm run test-prod'
+        sh 'cd ./src/frontend/ && npm install && npm run tests'
       }
     }
     stage('Test Backend') {
