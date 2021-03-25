@@ -9,7 +9,7 @@ pipeline {
     }
     stage('Test Frontend') {
       steps('Test the frontend') {
-        sh 'cd ./src/frontend/ && npm install && npm react-scripts test --watchAll=false'
+        sh 'cd ./src/frontend/ && npm install && npx react-scripts test --watchAll=false'
       }
     }
     stage('Test Backend') {
