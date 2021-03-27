@@ -34,7 +34,7 @@ pipeline {
         echo 'Deploying....'
 	sh "id -nu && id -nG"
 	sh 'if [ ! -d "/tmp/jenkins_output" ]; then mkdir /tmp/jenkins_output; fi'
-	sh 'if [ ! -d "/tmp/jenkins_output/bin2dec" ]; then mkdir ~/jenkins_output/bin2dec; fi'
+	sh 'if [ ! -d "/tmp/jenkins_output/bin2dec" ]; then mkdir /tmp/jenkins_output/bin2dec; fi'
 	sh 'mv build/libs/*.jar /tmp/jenkins_output/bin2dec'
       }
     }
