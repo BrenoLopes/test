@@ -32,6 +32,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'Deploying....'
+	sh "id -nu && id -nG"
 	sh 'if [ ! -d "/vagrant_data/bin2dec" ]; then mkdir /vagrant_data/bin2dec; fi'
 	sh 'mv build/libs/*.jar /vagrant_data'
       }
