@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Test Backend') {
       steps('Test the backend') {
-        sh './gradlew version && ./gradlew clean test'
+        sh './gradlew clean test'
       }
     }
     stage('Build') {
