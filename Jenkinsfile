@@ -33,8 +33,8 @@ pipeline {
       steps {
         echo 'Deploying....'
 	sh "id -nu && id -nG"
-	sh 'if [ ! -d "/vagrant_data/bin2dec" ]; then mkdir /vagrant_data/bin2dec; fi'
-	sh 'mv build/libs/*.jar /vagrant_data'
+	sh 'if [ ! -d "~/jenkins_output/bin2dec" ]; then mkdir ~/jenkins_output/bin2dec; fi'
+	sh 'mv build/libs/*.jar ~/jenkins_output/bin2dec'
       }
     }
   }
